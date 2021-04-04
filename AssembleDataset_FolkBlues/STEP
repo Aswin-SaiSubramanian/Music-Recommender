@@ -1,3 +1,4 @@
 1. download data of track ids sorted by its genre from "http://www.ifs.tuwien.ac.at/mir/msd/partitions/msd-MAGD-genreAssignment.cls"
+    - This is the link that Matthew found
     - trackIDs.txt file contains this data
 2. using filterGenre.py, separate track id of wanted genre (in my case folk and blues) and saved in file name folk and blues each.
