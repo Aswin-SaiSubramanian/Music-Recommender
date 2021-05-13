@@ -11,6 +11,7 @@ class Application(tk.Frame):
             self.master = master
             self.pack()
             self.create_widgets()
+            Recommendation_System = Recommender()
             
     def enable(x):
         x.config(state=NORMAL)
@@ -36,8 +37,8 @@ class Application(tk.Frame):
             # self.disable()
 
     def file_browser(self):
-            file = tkFileDialog.askopenfile(parent=root,mode='rb',title='Choose a file')
-            if file:
+            self.file = tkFileDialog.askopenfile(parent=root,mode='rb',title='Choose a file')
+            if self.file:
                 data = file.read()
                 file.close()
                 print("Success") # for testing
@@ -47,8 +48,11 @@ class Application(tk.Frame):
                 print("File not available.")
 
     def run_recommender(self):
-            if file:
+            if self.file:
+                imgs = get_3channel_spectrograms(self.file)
                 # Run the recommender
+                genre = Recommendation_System.get_genre_prediction(imgs)
+                result = Recommendation_System.get_recommendation(genre)
                 print("")
             else:
                 print("Please select an audio file.")
@@ -63,4 +67,3 @@ app.mainloop()
 # window
 #   - file browser, "go" button
 #   - recommendation 
-
