@@ -3,7 +3,7 @@ matplotlib.use('Agg')
 
 import tkinter as tk
 from tkinter import filedialog
-#import recommender as rec
+from recommender import Recommender as rec
 
 class Application(tk.Frame):
     def __init__(self, master = None):
@@ -11,7 +11,7 @@ class Application(tk.Frame):
             self.master = master
             self.pack()
             self.create_widgets()
-            Recommendation_System = Recommender()
+            self.Recommendation_System = rec()
             
     def enable(x):
         x.config(state=NORMAL)

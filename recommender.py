@@ -53,7 +53,7 @@ class Recommender():
         self.loaded_model.eval()
 
     # Visualizing the spectrogram
-    def plot_spectrogram(Y, sr=22050, hop_length=2965, y_axis="linear"):
+    def plot_spectrogram(self, Y, sr=22050, hop_length=2965, y_axis="linear"):
       fig = plt.figure(figsize=(25,10))
       # plt.axis('off')
       librosa.display.specshow(
@@ -67,7 +67,7 @@ class Recommender():
       return fig
 
     # find the number of spectrograms that can be generated from an audio file
-    def __num_spectrograms_possible(song_file):
+    def __num_spectrograms_possible__(self, song_file):
       read = wave.open(song_file)
       framerate = read.getframerate() # get sample rate
       numframes = read.getnframes()   # get number of samples
@@ -81,10 +81,10 @@ class Recommender():
 
     # Returns a 2-d array containing 90-second clips from a wav file in 3 chunks of 30 each.
     # Each chunk corresponsd to one channel of a spectrogram to be fed into VGG-19 
-    def __get_song_clips(song_file):
+    def __get_song_clips__(self, song_file):
       audio = AudioSegment.from_wav(song_file)
       song_files = []
-      for j in range(num_spectrograms_possible(song_file)):
+      for j in range(self.__num_spectrograms_possible__(song_file)):
         clips = []
         for i in range(3):
           t1 = (j*90*1000) + (i*30) * 1000 #Works in milliseconds
@@ -98,7 +98,7 @@ class Recommender():
 
     # Loads audio files from get_song_clips() into librosa.
     # Returns a numpy array representing those clips. 
-    def __librosa_load_song_clips(song_files):
+    def __librosa_load_song_clips__(self, song_files):
       song_clips = []
       for clips in song_files:
         song_chunks = []
@@ -112,7 +112,7 @@ class Recommender():
     # Takes 2-d array of numpy arrays representing 90-second song clips, each split into 3 separate numpy arrays, 
     # all loaded into librosa. Returns the element-wise stft (short time fourier transform) 
     # of the input array.
-    def __get_stft_of_clips(song_clips):
+    def __get_stft_of_clips__(self, song_clips):
       # extracting short-time fourier transform
       FRAME_SIZE = 446 # frame size chosen such that frequency_bins = frame_size/2 - 1 = 224
       HOP_SIZE = 2965  # Hop size chosen such that num_frames = (samples - frame_size)/ hop_size + 1 = 224 
@@ -127,7 +127,7 @@ class Recommender():
 
     # Calculates and returns the spectrograms of each element in the input numpy array.
     # The input numpy array must be the output of get_stft_of_clips().
-    def __calculate_spectrograms(stft):
+    def __calculate_spectrograms__(self, stft):
       specs = []
       for i in range(len(stft)):
         channels = []
@@ -139,7 +139,7 @@ class Recommender():
 
     # compute and return the log-amplitude spectrograms for the spectrograms created 
     # by calculate_spectrogram.
-    def __log_amplitude_transform(specs):
+    def __log_amplitude_transform__(self, specs):
       log_specs = []
       for i in range(len(specs)):
         channels = []
@@ -152,19 +152,18 @@ class Recommender():
 
     # Let the output of log_amplitude_transform() be called log_specs. 
     # This function transforms x[i][:] into tensors of size (3 x 224 x 224)
-    def __log_specs_to_image_tensors(log_specs):
+    def __log_specs_to_image_tensors__(self, log_specs):
       imgs = []
       for i in range(len(log_specs)):
-        img = torch.tensor(specs[i])
-        # print(img.size())
+        img = torch.tensor(log_specs[i])
         imgs.append(img)
       return imgs
 
     # a function to delete all intermediate wav files
-    def __remove_intermediate_wav_files():
+    def __remove_intermediate_wav_files__(self, song_file):
       j = 0
       i = 0
-      for j in range(num_spectrograms_possible(song_file)):
+      for j in range(self.__num_spectrograms_possible__(song_file)):
         for i in range(3):
           os.remove(f'{j*90 + i*30}to{j*90 + i*30 + 30}-' + song_file)
 
@@ -173,21 +172,21 @@ class Recommender():
 
     # A funtion that takes in the name of a song file (that is assumed to exist), 
     # and returns a list of spectrograms of size (3 x 224 x 224) 
-    def get_3channel_spectrograms(song_file):
+    def get_3channel_spectrograms(self, song_file):
       # get 90-second song clips, in three 30-second chunks each
-      file_names = get_song_clips(song_file)
+      file_names = self.__get_song_clips__(song_file)
       # load song clips to librosa
-      song_clips = librosa_load_song_clips(file_names)
+      song_clips = self.__librosa_load_song_clips__(file_names)
       # calculate stft's of each clip
-      stft = get_stft_of_clips(song_clips)
+      stft = self.__get_stft_of_clips__(song_clips)
       # calculate spectrograms based on stft's
-      specs = calculate_spectrograms(stft)
+      specs = self.__calculate_spectrograms__(stft)
       # transform spectrograms to log-amplitude
-      log_specs = log_amplitude_transform(specs)
+      log_specs = self.__log_amplitude_transform__(specs)
       # create 3-channel image tensors from each set of 3 spectrograms in log_specs
-      imgs = log_specs_to_image_tensors(log_specs)
+      imgs = self.__log_specs_to_image_tensors__(log_specs)
       # remove intermediate wave files
-      remove_intermediate_wav_files() 
+      self.__remove_intermediate_wav_files__(song_file) 
       return imgs
 
 
