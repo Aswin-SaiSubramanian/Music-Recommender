@@ -19,7 +19,7 @@ import os
 import statistics
 import random
 import tables
-import hdf5_getters
+# import hdf5_getters
 import pickle
 
 from torch import nn, optim
