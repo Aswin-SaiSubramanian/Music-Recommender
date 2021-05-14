@@ -31,6 +31,7 @@ class Application(tk.Frame):
             self.winfo_toplevel().title("Music Recommender")
 
             # Adding GUI components...
+            
             HOR_PAD = 25
             VERT_PAD = 25 
 
@@ -98,6 +99,11 @@ class Application(tk.Frame):
                 disp_string = "You might also like: " + result
                 self.text.delete('1.0', tk.END)
                 self.text.insert(tk.INSERT, disp_string) 
+                # copy recommendation to clipboard
+                self.master.clipboard_clear()
+                self.master.clipboard_append(result)
+                self.master.update() # now it stays on the clipboard after the window is closed
+                self.text.insert(tk.INSERT, "\n...Recommendation copied to clipboard...")
                 self.disable(self.text)
 
                 self.enable(self.browse)                            # Re-enable "Browse" button to allow the user to select the next wav file to analyse
