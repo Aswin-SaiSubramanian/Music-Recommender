@@ -31,27 +31,29 @@ class Application(tk.Frame):
             self.winfo_toplevel().title("Music Recommender")
 
             # Adding GUI components...
-            
+            HOR_PAD = 25
+            VERT_PAD = 25 
+
             # ...a button to exit the program
             self.quit = tk.Button(self, text="EXIT", fg="red", command=self.master.destroy)
-            self.quit.pack(side=tk.RIGHT, pady = 5, padx = 5)
+            self.quit.pack(side=tk.RIGHT, pady = VERT_PAD, padx = HOR_PAD)
 
             # ... a text box in which the application displays its outputs instead of command line
             self.text = tk.Text(self.master)
-            self.text.pack(side=tk.BOTTOM)
+            self.text.pack(side=tk.BOTTOM, pady = 5, padx = 5)
             self.disable(self.text)
 
             # ... a button to tell the app to open a file browser (for selecting a wav file as the app's input)
             self.browse = tk.Button(self)
             self.browse["text"] = "Browse..."                       # setting display text
             self.browse["command"] = self.file_browser              # setting button's function
-            self.browse.pack(side=tk.LEFT, pady = 5, padx = 5)
+            self.browse.pack(side=tk.LEFT, pady = VERT_PAD, padx = HOR_PAD)
 
             # ... a button to initiate the song recommendation process
             self.recommender = tk.Button(self)
             self.recommender["text"] = "Get Recommendation"         # setting display text
             self.recommender["command"] = self.run_recommender      # setting button's function
-            self.recommender.pack(side=tk.TOP, pady = 5, padx = 5)
+            self.recommender.pack(side=tk.TOP, pady = VERT_PAD, padx = HOR_PAD)
             
 
             
@@ -109,7 +111,7 @@ class Application(tk.Frame):
 
 
 root = tk.Tk()
-root.geometry("600x400")
+root.geometry("600x150")
 app = Application(master = root)
 app.mainloop()
 
