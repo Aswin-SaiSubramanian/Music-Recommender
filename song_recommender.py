@@ -24,18 +24,30 @@ class Application(tk.Frame):
     
     
     def create_widgets(self):
+            
+            # don't assume that self.parent is a root window.
+            # instead, call `winfo_toplevel to get the root window
+            # (https://stackoverflow.com/questions/2395431/using-tkinter-in-python-to-edit-the-title-bar)
+            self.winfo_toplevel().title("Music Recommender")
+
+            # Adding GUI components...
+            
+            # ...a button to exit the program
             self.quit = tk.Button(self, text="EXIT", fg="red", command=self.master.destroy)
             self.quit.pack(side=tk.RIGHT, pady = 5, padx = 5)
 
+            # ... a text box in which the application displays its outputs instead of command line
             self.text = tk.Text(self.master)
             self.text.pack(side=tk.BOTTOM)
             self.disable(self.text)
 
+            # ... a button to tell the app to open a file browser (for selecting a wav file as the app's input)
             self.browse = tk.Button(self)
             self.browse["text"] = "Browse..."
             self.browse["command"] = self.file_browser
             self.browse.pack(side=tk.LEFT, pady = 5, padx = 5)
 
+            # ... a button to initiate the song recommendation process
             self.recommender = tk.Button(self)
             self.recommender["text"] = "Get Recommendation"
             self.recommender["command"] = self.run_recommender
@@ -64,7 +76,7 @@ class Application(tk.Frame):
                 self.disable(self.recommender)
                 
                 self.enable(self.text)
-                self.text.insert(tk.INSERT, "File is not available.") # for testing
+                self.text.insert(tk.INSERT, "No file selected.") # for testing
                 self.disable(self.text)
 
     def run_recommender(self):
