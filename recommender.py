@@ -19,7 +19,6 @@ import os
 import statistics
 import random
 import tables
-# import hdf5_getters
 import pickle
 
 from torch import nn, optim
@@ -72,18 +71,18 @@ class Recommender():
       framerate = read.getframerate() # get sample rate
       numframes = read.getnframes()   # get number of samples
       duration = numframes/framerate  # duration of song: frames/frames-per-second = seconds
+      read.close()
       # print(duration)
     
       # compute the number of 90 second clips available in this file
       num_spectrograms = int(duration / 90)
       return num_spectrograms
 
-
     # Returns a 2-d array containing 90-second clips from a wav file in 3 chunks of 30 each.
     # Each chunk corresponsd to one channel of a spectrogram to be fed into VGG-19 
     def __get_song_clips__(self, song_file):
       audio = AudioSegment.from_wav(song_file)
-      song_files = []
+      song_files = [] 
       for j in range(self.__num_spectrograms_possible__(song_file)):
         clips = []
         for i in range(3):
@@ -189,85 +188,75 @@ class Recommender():
       self.__remove_intermediate_wav_files__(song_file) 
       return imgs
 
-
-
-
 ##########################################################################
 
-def get_genre_prediction(imgs):
-    
-    # getting the predictions for each 3-channel spectrograms. Stored in resuts
-    results = []
-    for x in imgs:
-      model_input = x.unsqueeze(dim=0)
-      r = loaded_model(model_input.to(torch.device('cpu')))
-      _, r = torch.max(r.detach(), 1)
-      results.append(r.squeeze())
+    def get_genre_prediction(self, imgs):
+        
+      # getting the predictions for each 3-channel spectrograms. Stored in resuts
+      results = []
+      for x in imgs:
+        model_input = x.unsqueeze(dim=0)
+        r = self.loaded_model(model_input.to(torch.device('cpu')))
+        _, r = torch.max(r.detach(), 1)
+        results.append(r.squeeze())
 
-    # get the sum of prediction made by the model (before finding mean)
-    result_sum = 0
-    for i in range (len(results)):
-      result_sum += results[i]
+      # get the sum of prediction made by the model (before finding mean)
+      result_sum = 0
+      for i in range (len(results)):
+        result_sum += results[i]
 
-    # get the mean of the predictions made by the model
-    prediction = torch.round(result_sum / len(results))
+      # get the mean of the predictions made by the model
+      prediction = torch.round(result_sum / len(results))
 
-    return prediction
-
-
-def get_recommendation(genre):
-    # mapping from model's genre prediction to genre name
-    # {0: "Electronic", 
-    #  1: "Jazz", 
-    #  2: "Rap", 
-    #  3: "Rock", 
-    #  4: "Latin", 
-    #  5: "Folk", 
-    #  6: "Blues", 
-    #  7: "Country"}
-    genres = ["Electronic", "Jazz", "Rap", "Rock"]
-
-    # Get the genre name from the model's prediction through 
-    # something like: 
-    # genre = genres[final_prediction]
-
-    # Dictionary that maps genre to song name and artist can be loaded from:
-    # song_to_genre.pickle 
-
-    song_to_genre = {}
-    with open('/song_to_genre.pickle', 'rb') as handle:
-        song_to_genre = pickle.load(handle)
+      return prediction
 
 
+    def get_recommendation(self, genre_label):
+      # mapping from model's genre prediction to genre name
+      # {0: "Electronic", 
+      #  1: "Jazz", 
+      #  2: "Rap", 
+      #  3: "Rock", 
+      #  4: "Latin", 
+      #  5: "Folk", 
+      #  6: "Blues", 
+      #  7: "Country"}
+      genre_label = int(genre_label) # converting a single-element tensor to int for translating into a genre name 
+      genres = ["Electronic", "Jazz", "Rap", "Rock"]
 
-    # Getting Identifying Information of Another Song in the Same Genre
-    # - generate random number i in range(num_of_files_in_dir- 1)
-    # - Traverse through the appropriate directory for the genres's h5 files for i steps
-    # - return info from h5 file
+      # Get the genre name from the model's prediction
+      genre = genres[genre_label]
 
-    torch.manual_seed(291)
-    np.random.seed(291)
-    index = random.randint(0, len(os.listdir(directory)))
-    x = 0
-    # Iterating through the folder to get the name of the h5 file with our recommendation
-    h5_id = ""
-    for file in os.listdir(directory):
-    if x > index:
-        h5_id = os.fsdecode(file)
-        break
-    else:
-        x += 1  
+      # Dictionary that maps genre to song name and artist can be loaded from:
+      # song_to_genre.pickle 
 
-    # h5_id
+      song_to_genre = {}
+      with open('./song_to_genre.pickle', 'rb') as handle:
+          song_to_genre = pickle.load(handle)
 
-    directory = directory + h5_id
-    h5 = tables.open_file(directory, mode='r')
+      # Getting Identifying Information of Another Song in the Same Genre
+      # - generate random number i in range(num_of_files_in_dir- 1)
+      # - Traverse through the appropriate directory for the genres's h5 files for i steps
+      # - return info from h5 file
 
-    artist_name = hdf5_getters.get_artist_name(h5)
-    title = hdf5_getters.get_title(h5)
+      # find the number of songs available in the dictionary song_to_genre, with the desired genre
+      num_songs_in_genre = 0
+      for x in song_to_genre:
+        if song_to_genre[x] == genre:
+          num_songs_in_genre += 1
 
-    h5.close()
-
-    # Display the above information in the GUI
-
-    # print(artist_name, title)
+      # Iterating through the song_to_genre dictionary to find a song recommendation for our output
+      torch.manual_seed(291)
+      np.random.seed(291)
+      index = random.randint(0, num_songs_in_genre)
+      count = 0
+      recommendation = ""
+      for song in song_to_genre:
+        if song_to_genre[song] == genre:
+          if count == index:
+            recommendation = song
+            break
+          else:
+            count += 1
+            
+      return recommendation
