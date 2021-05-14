@@ -79,7 +79,7 @@ class Recommender():
       return num_spectrograms
 
     # Returns a 2-d array containing 90-second clips from a wav file in 3 chunks of 30 each.
-    # Each chunk corresponsd to one channel of a spectrogram to be fed into VGG-19 
+    # Each chunk corresponds to one channel of a spectrogram to be fed into VGG-19 
     def __get_song_clips__(self, song_file):
       audio = AudioSegment.from_wav(song_file)
       song_files = [] 
@@ -95,7 +95,7 @@ class Recommender():
       return song_files
 
 
-    # Loads audio files from get_song_clips() into librosa.
+    # Loads audio files from __get_song_clips__() into librosa.
     # Returns a numpy array representing those clips. 
     def __librosa_load_song_clips__(self, song_files):
       song_clips = []
@@ -108,7 +108,7 @@ class Recommender():
         song_clips.append(song_chunks)
       return song_clips
 
-    # Takes as input, the output of __librosa_load_song_clips__ (2-d array of numpy arrays 
+    # Takes as input, the output of __librosa_load_song_clips__() (2-d array of numpy arrays 
     # representing 90-second song clips, each split into 3 separate numpy arrays, 
     # all loaded into librosa). Returns an numpy array with same shape as the input,  
     # containing the stft (short time fourier transform) of each element in the input array.
@@ -125,8 +125,10 @@ class Recommender():
         stft.append(channels)
       return stft
 
-    # Calculates and returns the spectrograms of each element in the input numpy array.
-    # The input numpy array must be the output of get_stft_of_clips().
+    # Calculates and returns the spectrograms of each element in the input numpy array 
+    # (in a numpy array with the same shape as the input array). I.e. converts the elements 
+    # of the input array from complex valued arrays to float arrays. 
+    # The input numpy array must be the output of __get_stft_of_clips__().
     def __calculate_spectrograms__(self, stft):
       specs = []
       for i in range(len(stft)):
@@ -138,7 +140,7 @@ class Recommender():
 
 
     # compute and return the log-amplitude spectrograms for the spectrograms created 
-    # by calculate_spectrogram.
+    # by __calculate_spectrogram__().
     def __log_amplitude_transform__(self, specs):
       log_specs = []
       for i in range(len(specs)):
@@ -149,8 +151,8 @@ class Recommender():
         log_specs.append(channels)
       return log_specs
 
-    # Let the output of log_amplitude_transform() be called log_specs. 
-    # This function transforms x[i][:] into tensors of size (3 x 224 x 224)
+    # Takes as its input (log_specs), the output of __log_amplitude_transform__(). 
+    # This function transforms log_specs[i][:] into tensors of size (3 x 224 x 224)
     def __log_specs_to_image_tensors__(self, log_specs):
       imgs = []
       for i in range(len(log_specs)):
@@ -235,9 +237,10 @@ class Recommender():
           song_to_genre = pickle.load(handle)
 
       # Getting Identifying Information of Another Song in the Same Genre
-      # - generate random number i in range(num_of_files_in_dir- 1)
-      # - Traverse through the appropriate directory for the genres's h5 files for i steps
-      # - return info from h5 file
+      # - generate random number "index" in range(num_of_files_in_dir- 1)
+      # - find the number of songs available for the desired genre in song_to_genre (num_songs_in_genre)
+      # - Traverse through index % num_songs_in_genre elements of the desired genre in song_to_genre
+      # The music recommendation is the element of song_to_genre that we stop at.
 
       # find the number of songs available in the dictionary song_to_genre, with the desired genre
       num_songs_in_genre = 0
