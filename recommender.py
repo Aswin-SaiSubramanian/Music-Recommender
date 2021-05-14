@@ -108,9 +108,10 @@ class Recommender():
         song_clips.append(song_chunks)
       return song_clips
 
-    # Takes 2-d array of numpy arrays representing 90-second song clips, each split into 3 separate numpy arrays, 
-    # all loaded into librosa. Returns the element-wise stft (short time fourier transform) 
-    # of the input array.
+    # Takes as input, the output of __librosa_load_song_clips__ (2-d array of numpy arrays 
+    # representing 90-second song clips, each split into 3 separate numpy arrays, 
+    # all loaded into librosa). Returns an numpy array with same shape as the input,  
+    # containing the stft (short time fourier transform) of each element in the input array.
     def __get_stft_of_clips__(self, song_clips):
       # extracting short-time fourier transform
       FRAME_SIZE = 446 # frame size chosen such that frequency_bins = frame_size/2 - 1 = 224
@@ -145,7 +146,6 @@ class Recommender():
         for j in range(len(specs[i])):
           log_converted_spec = librosa.power_to_db(specs[i][j])
           channels.append(log_converted_spec)
-          # _ = plot_spectrogram(log_converted_spec, 22050, 2965)
         log_specs.append(channels)
       return log_specs
 
