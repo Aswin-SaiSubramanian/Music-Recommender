@@ -99,10 +99,10 @@ class Application(tk.Frame):
                 disp_string = "You might also like: " + result
                 self.text.delete('1.0', tk.END)
                 self.text.insert(tk.INSERT, disp_string) 
-                # copy recommendation to clipboard
+                # copy recommendation to clipboard (referred to https://stackoverflow.com/questions/579687/how-do-i-copy-a-string-to-the-clipboard)
                 self.master.clipboard_clear()
                 self.master.clipboard_append(result)
-                self.master.update() # now it stays on the clipboard after the window is closed
+                self.master.update()                                # Allows output to persist on the clipboard after the window is closed
                 self.text.insert(tk.INSERT, "\n...Recommendation copied to clipboard...")
                 self.disable(self.text)
 
