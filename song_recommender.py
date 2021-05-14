@@ -11,7 +11,7 @@ class Application(tk.Frame):
             super().__init__(master)
             self.master = master
             self.pack()
-            self.status = False
+            self.status = False                 # is set to True when an input wav file is selected
             self.create_widgets()
             self.Recommendation_System = rec()
             self.name_of_target_file = ""
@@ -43,14 +43,14 @@ class Application(tk.Frame):
 
             # ... a button to tell the app to open a file browser (for selecting a wav file as the app's input)
             self.browse = tk.Button(self)
-            self.browse["text"] = "Browse..."
-            self.browse["command"] = self.file_browser
+            self.browse["text"] = "Browse..."                       # setting display text
+            self.browse["command"] = self.file_browser              # setting button's function
             self.browse.pack(side=tk.LEFT, pady = 5, padx = 5)
 
             # ... a button to initiate the song recommendation process
             self.recommender = tk.Button(self)
-            self.recommender["text"] = "Get Recommendation"
-            self.recommender["command"] = self.run_recommender
+            self.recommender["text"] = "Get Recommendation"         # setting display text
+            self.recommender["command"] = self.run_recommender      # setting button's function
             self.recommender.pack(side=tk.TOP, pady = 5, padx = 5)
             
 
@@ -58,45 +58,52 @@ class Application(tk.Frame):
     def file_browser(self):
             self.file = tk.filedialog.askopenfile(parent=root,mode='rb',title='Choose a file')
             if self.file:
-                self.status = True
-                self.name_of_target_file = self.file.name
-                self.name_of_target_file = self.name_of_target_file.split('/')[-1]
+                self.status = True                                  # Recording that an input wav file has been selected
+                self.name_of_target_file = self.file.name           # Gets the path to the selected wav file
+                self.name_of_target_file = self.name_of_target_file.split('/')[-1]  # Extracts the name of the wav file from its path 
                 self.file.close()
                 
+                # Writing feedback text to GUI
                 self.enable(self.text)
                 self.text.delete('1.0', tk.END) 
-                self.text.insert(tk.INSERT, "Success") # for testing
+                self.text.insert(tk.INSERT, "Success! File found.") 
                 self.disable(self.text)
                 
                 self.enable(self.recommender)
-                self.disable(self.browse)
+                self.disable(self.browse)                           # Have already selected an input file. Only need the "Get recommendation" button.
 
             else:
-                self.status = False
+                self.status = False                                 # Ensures that self.status remains False when no input wav file is selected
                 self.disable(self.recommender)
                 
+                # Writing feedback text to GUI
                 self.enable(self.text)
-                self.text.insert(tk.INSERT, "No file selected.") # for testing
+                self.text.insert(tk.INSERT, "No file selected.") 
                 self.disable(self.text)
 
     def run_recommender(self):
             if self.status:
+                
+                # Generate spectrograms from input wav file
                 imgs = self.Recommendation_System.get_3channel_spectrograms(self.name_of_target_file)
+                
                 # Run the recommender
                 genre = self.Recommendation_System.get_genre_prediction(imgs)
                 result = self.Recommendation_System.get_recommendation(genre)
 
+                # Writing music recommendation to GUI
                 self.enable(self.text)
                 disp_string = "You might also like: " + result
                 self.text.delete('1.0', tk.END)
-                self.text.insert(tk.INSERT, disp_string) # for testing
+                self.text.insert(tk.INSERT, disp_string) 
                 self.disable(self.text)
 
-                self.enable(self.browse)
+                self.enable(self.browse)                            # Re-enable "Browse" button to allow the user to select the next wav file to analyse
             else:
+                # Writing feedback text to GUI
                 self.enable(self.text)
                 self.text.delete('1.0', tk.END)
-                self.text.insert(tk.INSERT, "Please select an audio file.") # for testing
+                self.text.insert(tk.INSERT, "Please select an audio file.") 
                 self.disable(self.text)
         
 
