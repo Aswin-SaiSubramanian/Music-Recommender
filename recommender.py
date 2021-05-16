@@ -1,8 +1,6 @@
 # Generate Spectrograms
 
-#pip install youtube_dl
 #pip install pydub
-#wget https://raw.githubusercontent.com/tbertinmahieux/MSongsDB/master/PythonSrc/hdf5_getters.py
 #pip install tables # need PyTables package to use hdf5_getters
 #pip install pickle-mixin
 
@@ -105,7 +103,7 @@ class Recommender():
           song, sr = librosa.load(chunks)
           song_chunks.append(song)
           # print(sr)
-        song_clips.append(song_chunks)
+        song_clips.append(song_chunks) # edit
       return song_clips
 
     # Takes as input, the output of __librosa_load_song_clips__() (2-d array of numpy arrays 
