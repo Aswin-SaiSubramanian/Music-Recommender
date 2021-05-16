@@ -29,9 +29,10 @@ class Recommender():
     def __init__(self):
 
         # get the saved parameters of the VGG-19 from Google Drive 
-        gdd.download_file_from_google_drive(file_id='1zwbum2Bq9VuVnwS0c239bIKqgpEj163r',
+        # (https://drive.google.com/file/d/1-5_MFX-ipTFitG1KGT7gl1PrFBA-dQhY/view?usp=sharing) 
+        gdd.download_file_from_google_drive(file_id='1-5_MFX-ipTFitG1KGT7gl1PrFBA-dQhY',
                                             dest_path='./cpen291_proj_genreClassifier.zip',
-                                            unzip=True)
+                                            unzip=False)
 
         self.loaded_model = models.vgg19(pretrained=True)
 
@@ -46,7 +47,7 @@ class Recommender():
             nn.Linear(in_features=4096, out_features=8, bias=True)
         )
 
-        self.loaded_model.load_state_dict(torch.load("./cpen291_proj_genreClassifier.pt", map_location=torch.device('cpu')))
+        self.loaded_model.load_state_dict(torch.load("./cpen291_proj_genreClassifier.zip", map_location=torch.device('cpu')))
         self.loaded_model.eval()
 
     # Visualizing the spectrogram
