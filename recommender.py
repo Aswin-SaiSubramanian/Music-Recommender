@@ -29,7 +29,6 @@ class Recommender():
     def __init__(self):
 
         # get the saved parameters of the VGG-19 from Google Drive 
-        # (https://drive.google.com/file/d/1-5_MFX-ipTFitG1KGT7gl1PrFBA-dQhY/view?usp=sharing) 
         gdd.download_file_from_google_drive(file_id='1-5_MFX-ipTFitG1KGT7gl1PrFBA-dQhY',
                                             dest_path='./cpen291_proj_genreClassifier.zip',
                                             unzip=False)
@@ -214,16 +213,16 @@ class Recommender():
 
     def get_recommendation(self, genre_label):
       # mapping from model's genre prediction to genre name
-      # {0: "Electronic", 
-      #  1: "Jazz", 
-      #  2: "Rap", 
-      #  3: "Rock", 
+      # {0: "Blues", 
+      #  1: "Country", 
+      #  2: "Electronic", 
+      #  3: "Folk", 
       #  4: "Latin", 
-      #  5: "Folk", 
-      #  6: "Blues", 
-      #  7: "Country"}
+      #  5: "Jazz", 
+      #  6: "Rap", 
+      #  7: "Rock"}
       genre_label = int(genre_label) # converting a single-element tensor to int for translating into a genre name 
-      genres = ["Electronic", "Jazz", "Rap", "Rock"]
+      genres = ["Blues", "Country", "Electronic", "Folk", "Jazz", "Latin", "Rap", "Rock"]
 
       # Get the genre name from the model's prediction
       genre = genres[genre_label]
@@ -260,5 +259,7 @@ class Recommender():
             break
           else:
             count += 1
-            
+      
+      recommendation = recommendation + f"\n({genre})"
+
       return recommendation
