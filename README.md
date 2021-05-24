@@ -5,4 +5,5 @@ Parasaurolophus, named after the dinosaur known for its unique sound, is designe
 
 ## App Tour
 
-[![App tour](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/2021-05-16%2018-31-33.mkv)]
+https://user-images.githubusercontent.com/36906268/119408485-a4c08d00-bc9a-11eb-863f-47d325ffe8bd.mp4
+
