@@ -1,6 +1,4 @@
 
-https://user-images.githubusercontent.com/36906268/119421945-badb4700-bcb4-11eb-91a2-01add1d100fa.mp4
-
 # Parasaurolophus: Music Recommender
 CPEN 291 team project
 
