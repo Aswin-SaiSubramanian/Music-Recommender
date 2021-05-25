@@ -1,3 +1,6 @@
+
+https://user-images.githubusercontent.com/36906268/119421945-badb4700-bcb4-11eb-91a2-01add1d100fa.mp4
+
 # Parasaurolophus: Music Recommender
 CPEN 291 team project
 
@@ -5,7 +8,9 @@ Parasaurolophus, named after the dinosaur known for its unique sound, is designe
 
 ## Project Demo
 
-https://user-images.githubusercontent.com/36906268/119421788-5ddf9100-bcb4-11eb-878c-c2910d30633b.mp4
+https://user-images.githubusercontent.com/36906268/119421956-c0d12800-bcb4-11eb-992c-c8267e52f015.mp4
+
+
 
 
 
