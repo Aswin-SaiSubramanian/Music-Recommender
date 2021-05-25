@@ -18,7 +18,8 @@ https://user-images.githubusercontent.com/36906268/119421956-c0d12800-bcb4-11eb-
 
 - Machine Learning
     - Model training and testing
-    - Successfully using Ensemble-Pytorch framework to train a voting ensemble
+    - Learned the framework Ensemble-Pytorch
+        - Now, we can easily experiment with different kinds of machine learning ensembles to improve the accuracy of our genre classifier.
 
 
 
