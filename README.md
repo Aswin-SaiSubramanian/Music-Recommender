@@ -9,7 +9,16 @@ Parasaurolophus, named after the dinosaur known for its unique sound, is designe
 https://user-images.githubusercontent.com/36906268/119421956-c0d12800-bcb4-11eb-992c-c8267e52f015.mp4
 
 
+## Highlights
 
+- Data Flow
+    - Spectrogram extraction
+    - Preparing model input
+    - Interpreting model output
+
+- Machine Learning
+    - Model training and testing
+    - Successfully using Ensemble-Pytorch framework to train a voting ensemble
 
 
 
