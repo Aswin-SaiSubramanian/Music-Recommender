@@ -17,6 +17,7 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
     - Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).
     - Merged additional spectrograms collected by team members into full dataset (M4).
     - Debugged GUI functions with Matthew (M4).
+    - Made project demo video (demos/project_demo.mp4, M4).
     - Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4). 
 
 **Team-mate Contributions**
