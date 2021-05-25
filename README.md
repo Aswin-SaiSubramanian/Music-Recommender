@@ -4,6 +4,8 @@ CPEN 291 team project
 
 Parasaurolophus, named after the dinosaur known for its unique sound, is designed to give music recommendations to users. The application takes an input wav file and uses a genre classifier’s prediction to recommend other music from the same genre. The application recognizes and recommends music from eight different music genres, namely: Blues,Country, Electronic, Folk, Jazz, Latin, Rock, and Rap music. The recommendation is also automatically copied to the user’s clipboard for convenience. 
 
+For a more detailed description of data flow and modules, see our final report (CPEN 291 Project Final Report.pdf)
+
 ## Project Demo
 
 https://user-images.githubusercontent.com/36906268/119421956-c0d12800-bcb4-11eb-992c-c8267e52f015.mp4
