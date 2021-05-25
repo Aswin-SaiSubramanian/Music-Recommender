@@ -7,6 +7,8 @@
 
 # Overall Contributions
 
+Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was broken into.
+
 **My Contributions**
 - Sai Subramanian, Aswin
     - Collected .h5 files for Rock and Jazz from the Million Song Dataset (M1).
