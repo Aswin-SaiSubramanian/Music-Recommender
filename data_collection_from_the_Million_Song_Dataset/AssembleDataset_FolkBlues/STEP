@@ -1,0 +1,9 @@
+1. download data of track ids sorted by its genre from "http://www.ifs.tuwien.ac.at/mir/msd/partitions/msd-MAGD-genreAssignment.cls"
+    - This is the link that Matthew found
+    - trackIDs.txt file contains this data
+2. using filterGenre.py, separate track id of wanted genre (in my case folk and blues) and saved in file name folk.txt and blues.txt each.
+3. Need data preprocessing by comparison with files in millionsongsubset
+    - using geth5subset untar millionsonsubset downloaded in my local drive
+    - remove overlapping trackIDs
+    - using os.walk() function move through the folder to remove tracks that are not in the list folk.txt or blues.txt
+    - save files to separate folder for folk and blues
