@@ -15,7 +15,7 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
         - Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).
         - Merged additional spectrograms collected by team members into full dataset (M4).
         - Performed tests to determine an effective batch-size to speed up training time (M2). 
-    - Layed the foundation for our genre classifier's training and testing dataset:
+    - Layed the foundation for our genre classifier's training and testing datasets:
         - Developed spectrogram extraction process (M3).
         - Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).
     - Debugged GUI functions with Matthew (M4). 
