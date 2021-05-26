@@ -70,7 +70,9 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
 - Created the Google Slides presentation and recorded audio for the project presentation video. 
 
 # Further Contribution Details
-
-See the milestone reports in subdirectories M1, M2, M3, and M4 of directory milestone_reports. 
-
+See the "Contributions" section at the bottom of each milestone report:
+- Milestone 1 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M1/Team%20Dilphosaurus%20-%20Milestone%201%20Report.pdf
+- Milestone 2 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M2/Team%20Dilphosaurus%20-%20Milestone%202%20Report.pdf
+- Milestone 3 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M3/Team%20Dilphosaurus%20-%20Milestone%203%20Report.pdf
+- Milestone 4 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M4/Team%20Dilphosaurus%20-%20Milestone%204%20Report.pdf
   
