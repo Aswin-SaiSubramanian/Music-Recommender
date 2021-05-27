@@ -1,6 +1,6 @@
 
 # Parasaurolophus: Music Recommender
-A Machine Learning Project | UBC CPEN 291 - Team Dilophosaurus, March - May 2021
+A Machine Learning Project | UBC CPEN 291 - Team Dilophosaurus, March to May 2021
 
 ## Project Desctiption
 Parasaurolophus, named after the dinosaur known for its unique sound, is an app that gives music recommendations to users. The application takes an input wav file and uses a genre classifier’s prediction to recommend other music from the same genre. Eight music genres are currently supported, namely: Blues,Country, Electronic, Folk, Jazz, Latin, Rock, and Rap music. Finally, the recommendation is automatically copied to the user’s clipboard for convenience. 
