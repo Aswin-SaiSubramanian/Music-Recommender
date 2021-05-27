@@ -9,22 +9,27 @@ Parasaurolophus, named after the dinosaur known for its unique sound, is an app 
 
 https://user-images.githubusercontent.com/36906268/119421956-c0d12800-bcb4-11eb-992c-c8267e52f015.mp4
 
-## Developing the Machine Learning Component
-- Data collection
-     - Spectrogram extraction from YouTube audio samples
-     - Automation of spectrogram extraction and storage process
-- Model training and testing
-    - Experimented with various training parameters, such as batch size, and learning rate to optimize for fast training and high genre classification accuracy.
-    - Experimented with various data parameters, including number of genres, and number of samples per genre to optimize for high genre classification accuracy.
-- Learned the framework Ensemble-Pytorch for further improvement to genre classification accuracy
-    - Now, we can easily experiment with different kinds of machine learning ensembles to improve the accuracy of our genre classifier.
+## Developing the Machine Learning Component (My Highlights)
+Data collection 
+- Spectrogram extraction from YouTube audio samples
+    - Section "M3: Creating a Spectrogram Dataset" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
+
+Model training and testing
+- Experimented with data parameters, including number of genres, and number of samples per genre to optimize for genre classification accuracy.
+    - Section "M4 Training Logs" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
+
+Learning the Ensemble-Pytorch framework
+- This will facilitate experimentation with different kinds of ensemble architectures (aiming to further improve the accuracy of our genre classifier).
+- Jupyter Notebook: [ensemble_genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/ensemble_genreClassifier_M4.ipynb)
 
 ## Further Details
+Team member contributions:
+- https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md
 
 For a more details on data flow and modules, see our final report:
 - https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf
 
-Details about the development of this project and design decision can be found in our milestone reports:
+Details about the development of this project, challenges and bottlenecks, and milestone-level team member contributions can be found in our milestone reports:
 - Milestone 1 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M1/Team%20Dilphosaurus%20-%20Milestone%201%20Report.pdf
 - Milestone 2 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M2/Team%20Dilphosaurus%20-%20Milestone%202%20Report.pdf
 - Milestone 3 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M3/Team%20Dilphosaurus%20-%20Milestone%203%20Report.pdf
