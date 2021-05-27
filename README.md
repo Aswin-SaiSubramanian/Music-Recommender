@@ -15,7 +15,7 @@ Data collection
     - Section "M3: Creating a Spectrogram Dataset" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
 
 Model training and testing
-- Experimented with data parameters, including number of genres, and number of samples per genre to optimize for genre classification accuracy.
+- Experimentation with data parameters, including number of genres and number of samples per genre, to optimize genre classification accuracy
     - Section "M4 Training Logs" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
 
 Learning the Ensemble-Pytorch framework
