@@ -24,17 +24,15 @@ Trying an ensemble architecture
      
 
 ## Further Details
-Team member contributions:
-- https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md
+Team member contributions can be found [here](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md) 
 
-For more details on data flow and modules, see our final report:
-- https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf
+For more details on data flow and modules, see our [final report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf)
 
 Details about the development of this project, challenges and bottlenecks, and milestone-level team member contributions can be found in our milestone reports:
-- Milestone 1 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M1/Team%20Dilphosaurus%20-%20Milestone%201%20Report.pdf
-- Milestone 2 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M2/Team%20Dilphosaurus%20-%20Milestone%202%20Report.pdf
-- Milestone 3 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M3/Team%20Dilphosaurus%20-%20Milestone%203%20Report.pdf
-- Milestone 4 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M4/Team%20Dilphosaurus%20-%20Milestone%204%20Report.pdf
+- [Milestone 1 Report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M1/Team%20Dilphosaurus%20-%20Milestone%201%20Report.pdf)
+- [Milestone 2 Report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M2/Team%20Dilphosaurus%20-%20Milestone%202%20Report.pdf)
+- [Milestone 3 Report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M3/Team%20Dilphosaurus%20-%20Milestone%203%20Report.pdf)
+- [Milestone 4 Report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M4/Team%20Dilphosaurus%20-%20Milestone%204%20Report.pdf)
 
 
 
