@@ -10,27 +10,19 @@
 Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was broken into.
 
 **My Contributions**
-<!-- <details><summary>Sai Subramanian, Aswin</summary>
-<br>
-- Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).<br>
-- Merged additional spectrograms collected by team members into full dataset (M4).<br>
-- Performed tests to determine an effective batch-size to speed up training time (M2).<br>
-- Developed spectrogram extraction process (M3).<br>
-- Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).<br>
-- Debugged GUI functions with Matthew (M4). <br>
-- Made project demo video (demos/project_demo.mp4, M4).<br>
-- Collected .h5 files for Rock and Jazz from the Million Song Dataset (M1).
-</details> -->
-
 <details><summary>Sai Subramanian, Aswin</summary>
-<ul>
+<ul>    
 <li> Helped improve the accuracy of our genre classifier from 40% to 60%:</li>
-<ul><li> Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).</li>
-<li> Merged additional spectrograms collected by team members into full dataset (M4).</li>
-<li> Performed tests to determine an effective batch-size to speed up training time (M2).</li></ul>
-    
-<li> Developed spectrogram extraction process (M3).</li>
-<li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>
+    <ul>
+    <li> Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).</li>
+    <li> Merged additional spectrograms collected by team members into full dataset (M4).</li>
+    <li> Performed tests to determine an effective batch-size to speed up training time (M2).</li>
+    </ul>    
+<li>Layed the foundation for our genre classifier's training and testing datasets:</li>
+    <ul>
+    <li> Developed spectrogram extraction process (M3).</li>
+    <li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>    
+    </ul>
 <li> Debugged GUI functions with Matthew (M4).</li> 
 <li> Made project demo video (demos/project_demo.mp4, M4).</li>
 <li> Collected .h5 files for Rock and Jazz from the Million Song Dataset (M1).</li>
