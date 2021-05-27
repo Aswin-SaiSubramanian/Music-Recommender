@@ -26,7 +26,7 @@ Learning the Ensemble-Pytorch framework
 Team member contributions:
 - https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md
 
-For a more details on data flow and modules, see our final report:
+For more details on data flow and modules, see our final report:
 - https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf
 
 Details about the development of this project, challenges and bottlenecks, and milestone-level team member contributions can be found in our milestone reports:
@@ -34,14 +34,6 @@ Details about the development of this project, challenges and bottlenecks, and m
 - Milestone 2 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M2/Team%20Dilphosaurus%20-%20Milestone%202%20Report.pdf
 - Milestone 3 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M3/Team%20Dilphosaurus%20-%20Milestone%203%20Report.pdf
 - Milestone 4 | https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M4/Team%20Dilphosaurus%20-%20Milestone%204%20Report.pdf
-
-<!-- 
-## Highlights
-
-- Data Flow
-    - Spectrogram extraction
-    - Preparing model input
-    - Interpreting model output -->
 
 
 
