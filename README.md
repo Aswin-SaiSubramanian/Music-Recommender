@@ -24,9 +24,9 @@ Trying an ensemble architecture
      
 
 ## Further Details
-Team member contributions can be found [here](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md) 
+Team member contributions can be found [here](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/AUTHORS.md). 
 
-For more details on data flow and modules, see our [final report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf)
+For more details on data flow and modules, see our [final report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/CPEN%20291%20Project%20Final%20Report.pdf).
 
 Details about the development of this project, challenges and bottlenecks, and milestone-level team member contributions can be found in our milestone reports:
 - [Milestone 1 Report](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/reports/M1/Team%20Dilphosaurus%20-%20Milestone%201%20Report.pdf)
