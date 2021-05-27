@@ -24,8 +24,33 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
     
 
 **Team-mate Contributions**
+- Jung, Cassiel
+    - Collected .h5 file of Folk and Blues from the Million Song Dataset (M1)
+    - Tested the model by differing the step size while keeping the other values constant to get the best accuracy (M2)
+    - Wrote dataset class that matches spectrograms and genre with Quinn (M3)
+    - Collected spectrograms to increase number of samples used for training model(M4)
+    - Folk, Blues, Latin and Country
+    - Made last GUI feedback to check if everything works fine (M4)
 
-<details>
+- Poon, Matthew
+    - Created a script to extract and filter h5 song samples from the Million Song Dataset (M1)
+    - Collected h5 files for Metal, Reggae, Classical, Latin, and Electronic music.(Metal, Reggae, and Classical discarded due to lack of samples) (M1) 
+    - Created the structure used for storing the dataset (individual genre folders)(M2)
+    - Performed tests to determine the best learning rate for our model (M2)
+    - Created a script to extract information and save dictionaries for URL:Genre,TrackID:Genre, and Song:Genre (M3)
+    - Debugged GUI functions with Aswin (M4)
+    - Collected spectrograms for additional samples for following genres: Rap, Latin, Jazz, Electronic (M4)
+    - Recorded and edited the project presentation video for final submission
+
+- Carroll, Quinn
+    - Collected h5 files of Rap and Country songs from the Million Song Dataset (M1)
+    - Performed testing on the model to find the best values for gamma and momentum(M2)
+    - Created class genreClassificationDatasetSpectrogram in paired programmingsession with Cassiel (M3)
+    - Collected spectrograms from youtube audio to increase number of samples in Blues subset (M4)
+    - Created data flow diagram of our genreClassifier process (M4)
+    - Created outline for video presentation (M4)
+
+<!-- <details>
 <summary>Jung, Cassiel</summary>
 <br>
 - Collected .h5 file of Folk and Blues from the Million Song Dataset (M1)<br>
@@ -58,7 +83,7 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
 - Collected spectrograms from youtube audio to increase number of samples inBlues subset (M4)<br>
 - Created data flow diagram of our genreClassifier process (M4)<br>
 - Created outline for video presentation (M4)
-</details>
+</details> -->
  
 **Shared Contributions (Paired Programming Style)**
 - Created a custom dataset class that:
