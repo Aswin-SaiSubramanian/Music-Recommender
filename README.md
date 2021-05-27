@@ -19,8 +19,9 @@ Model training and testing
     - Section "M4 Training Logs" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
 
 Trying an ensemble architecture
-- Jupyter Notebook: [ensemble_genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/ensemble_genreClassifier_M4.ipynb)
-    - Learned the Ensemble-Pytorch framework to facilitate experimentation with different kinds of ensemble architectures. 
+- Learned the Ensemble-Pytorch framework to facilitate experimentation with different kinds of ensemble architectures
+    - Jupyter Notebook: [ensemble_genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/ensemble_genreClassifier_M4.ipynb)
+     
 
 ## Further Details
 Team member contributions:
