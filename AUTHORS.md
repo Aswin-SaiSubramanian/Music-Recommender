@@ -25,9 +25,10 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
 <details><summary>Sai Subramanian, Aswin</summary>
 <ul>
 <li> Helped improve the accuracy of our genre classifier from 40% to 60%:</li>
-<li><li> Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).</li></li>
+<ul><li> Experimented with model training parameters such as number of genres, number of samples per genre to find trends in training results. This helped make decisions about how to improve the genre classifier’s accuracy (M3/M4).</li>
 <li> Merged additional spectrograms collected by team members into full dataset (M4).</li>
-<li> Performed tests to determine an effective batch-size to speed up training time (M2).</li>
+<li> Performed tests to determine an effective batch-size to speed up training time (M2).</li></ul>
+    
 <li> Developed spectrogram extraction process (M3).</li>
 <li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>
 <li> Debugged GUI functions with Matthew (M4).</li> 
