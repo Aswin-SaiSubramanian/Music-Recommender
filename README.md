@@ -18,8 +18,8 @@ Model training and testing
 - Experimentation with data parameters, including number of genres and number of samples per genre, to optimize genre classification accuracy
     - Section "M4 Training Logs" in [genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/genreClassifier_M4.ipynb).
 
-Learning the Ensemble-Pytorch framework
-- To facilitate experimentation with different kinds of ensemble architectures (aiming to further improve the accuracy of our genre classifier).
+Trying an ensemble architecture
+- Learning the Ensemble-Pytorch framework to facilitate experimentation with different kinds of ensemble architectures
 - Jupyter Notebook: [ensemble_genreClassifier_M4.ipynb](https://github.com/Aswin-SaiSubramanian/Music-Recommender/blob/main/genre_classifier_development/ensemble_genreClassifier_M4.ipynb)
 
 ## Further Details
