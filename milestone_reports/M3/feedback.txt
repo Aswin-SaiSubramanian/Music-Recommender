@@ -1,2 +1,0 @@
-Good progress, glad to see that you start to use spectrogram, which is a more natural representation and allows you to work on more data.
-The challenging section is good and the plans for solving them are also good! Re speeding up spectrogram extraction: https://stackoverflow.com/questions/58154205/extracting-spectogram-of-every-audio-file seems have a multi core solution that might speed this up, have a try and see if it helps.
