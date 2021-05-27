@@ -71,37 +71,40 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
 
 <details>
 <summary>Jung, Cassiel</summary>
-<br>
-- Collected .h5 file of Folk and Blues from the Million Song Dataset (M1)<br>
-- Tested the model by differing the step size while keeping the other values constant to get the best accuracy (M2)<br>
-- Wrote dataset class that matches spectrograms and genre with Quinn (M3)<br>
-- Collected spectrograms to increase number of samples used for training model(M4)<br>
-- Folk, Blues, Latin and Country<br>
-- Made last GUI feedback to check if everything works fine (M4)<br>
+<ul>
+<li> Collected .h5 file of Folk and Blues from the Million Song Dataset (M1)</li>
+<li> Tested the model by differing the step size while keeping the other values constant to get the best accuracy (M2)</li>
+<li> Wrote dataset class that matches spectrograms and genre with Quinn (M3)</li>
+<li> Collected spectrograms to increase number of samples used for training model(M4)</li>
+<li> Folk, Blues, Latin and Country</li>
+<li> Made last GUI feedback to check if everything works fine (M4)</li>
+</ul>
 </details> 
 
 <details>
 <summary>Poon, Matthew</summary>
-<br>
-- Created a script to extract and filter h5 song samples from the Million Song Dataset (M1)<br>
-- Collected h5 files for Metal, Reggae, Classical, Latin, and Electronic music.(Metal, Reggae, and Classical discarded due to lack of samples) (M1)<br> 
-- Created the structure used for storing the dataset (individual genre folders)(M2)<br>
-- Performed tests to determine the best learning rate for our model (M2)<br>
-- Created a script to extract information and save dictionaries for URL:Genre,TrackID:Genre, and Song:Genre (M3)<br>
-- Debugged GUI functions with Aswin (M4)<br>
-- Collected spectrograms for additional samples for following genres: Rap, Latin, Jazz, Electronic (M4)<br>
-- Recorded and edited the project presentation video for final submission
+<ul>
+<li> Created a script to extract and filter h5 song samples from the Million Song Dataset (M1)</li>
+<li> Collected h5 files for Metal, Reggae, Classical, Latin, and Electronic music.(Metal, Reggae, and Classical discarded due to lack of samples) (M1)</li> 
+<li> Created the structure used for storing the dataset (individual genre folders)(M2)</li>
+<li> Performed tests to determine the best learning rate for our model (M2)</li>
+<li> Created a script to extract information and save dictionaries for URL:Genre,TrackID:Genre, and Song:Genre (M3)</li>
+<li> Debugged GUI functions with Aswin (M4)</li>
+<li> Collected spectrograms for additional samples for following genres: Rap, Latin, Jazz, Electronic (M4)</li>
+<li> Recorded and edited the project presentation video for final submission</li>
+</ul>
 </details>
 
 <details>
 <summary>Carroll, Quinn</summary>
-<br>
-- Collected h5 files of Rap and Country songs from the Million Song Dataset (M1)<br>
-- Performed testing on the model to find the best values for gamma and momentum(M2)<br>
-- Created class genreClassificationDatasetSpectrogram in paired programmingsession with Cassiel (M3)<br>
-- Collected spectrograms from youtube audio to increase number of samples inBlues subset (M4)<br>
-- Created data flow diagram of our genreClassifier process (M4)<br>
-- Created outline for video presentation (M4)
+<ul>
+<li> Collected h5 files of Rap and Country songs from the Million Song Dataset (M1)</li>
+<li> Performed testing on the model to find the best values for gamma and momentum(M2)</li>
+<li> Created class genreClassificationDatasetSpectrogram in paired programmingsession with Cassiel (M3)</li>
+<li> Collected spectrograms from youtube audio to increase number of samples inBlues subset (M4)</li>
+<li> Created data flow diagram of our genreClassifier process (M4)</li>
+<li> Created outline for video presentation (M4)</li>
+</ul>
 </details>
  
 **Shared Contributions (Paired Programming Style)**
