@@ -23,6 +23,7 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
     <li> Developed spectrogram extraction process (M3).</li>
     <li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>    
     </ul>
+<li> Proposed the plan (steps and work distribution) for switching to a spectrogram-based dataset for training and validating our model.
 <li> Debugged GUI functions with Matthew (M4).</li> 
 <li> Made project demo video (demos/project_demo.mp4, M4).</li>
 <li> Collected .h5 files for Rock and Jazz from the Million Song Dataset (M1).</li>
