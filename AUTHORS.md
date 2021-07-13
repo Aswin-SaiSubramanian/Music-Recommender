@@ -21,8 +21,10 @@ Note: "M1," "M2," "M3," and "M4" refer the four milestones that the project was 
 <li>Layed the foundation for our genre classifier's training and testing datasets:</li>
     <ul>
     <li> Proposed and initiated the plan to adopt a spectrogram-based dataset for training and validating our model (M3).</li> 
-    <li> Developed spectrogram extraction process (M3).</li>
-    <li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>    
+        <ul>    
+        <li> Developed spectrogram extraction process (M3).</li>
+        <li> Developed process to download audio samples from YouTube, and store spectrograms generated from them into our dataset (M3).</li>    
+        </ul>
     </ul>
 <li> Debugged GUI functions with Matthew (M4).</li> 
 <li> Made project demo video (demos/project_demo.mp4, M4).</li>
